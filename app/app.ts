@@ -8,7 +8,7 @@ import { ProductService } from './providers/product-service/product-service';
 
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>',
-  providers: [CategoryService,ProductService]
+  providers: [CategoryService, ProductService]
 })
 export class MyApp {
   rootPage: any = HomePage;

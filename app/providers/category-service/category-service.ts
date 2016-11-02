@@ -35,12 +35,10 @@ export class CategoryService {
     });
   }
 
-  insert(category){
-
+  insert(category) {
     let headers = new Headers();
-    headers.append('Content-Type','application/json');
-
-    return new Promise( (resolve, reject) => {
+    headers.append('Content-Type', 'application/json');
+    return new Promise((resolve, reject) => {
       this.http.post(this.baseUri, JSON.stringify(category), {headers: headers})
         .map(res => res.json())
         .subscribe(data => {
@@ -51,12 +49,10 @@ export class CategoryService {
     });
   }
 
-  update(category){
-
+  update(category) {
     let headers = new Headers();
-    headers.append('Content-Type','application/json');
-
-    return new Promise( (resolve, reject) => {
+    headers.append('Content-Type', 'application/json');
+    return new Promise((resolve, reject) => {
       this.http.put(this.baseUri, JSON.stringify(category), {headers: headers})
         .map(res => res.json())
         .subscribe(data => {
@@ -66,4 +62,5 @@ export class CategoryService {
         });
     });
   }
+
 }
