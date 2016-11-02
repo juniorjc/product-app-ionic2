@@ -60,7 +60,7 @@ export class ProductPage {
 
   updateProduct(product) {
     let modal = Modal.create(ProductModalPage, {
-      product: product
+      product: Object.assign({},product)
     });
 
     modal.onDismiss(() => {

@@ -1,15 +1,24 @@
 import { Component } from '@angular/core';
 import { NavController, ViewController, NavParams } from 'ionic-angular';
 import { ProductService } from './../../providers/product-service/product-service';
+import { CategoryService } from './../../providers/category-service/category-service';
 
 @Component({
   templateUrl: 'build/pages/product-modal/product-modal.html',
 })
 export class ProductModalPage {
   product: any;
+  categories: Array<any>;
 
-  constructor(private nav: NavController, private view: ViewController, private productService: ProductService, private params: NavParams) {
+  constructor(private nav: NavController, private view: ViewController, private productService: ProductService, private categoryService: CategoryService, private params: NavParams) {
     this.product = params.get('product') || {};
+    this.categoryService.findAll().
+      then((categories: Array<any>) => {
+        this.categories = categories;
+      }, (error) => {
+        this.categories = [];
+        console.log("Erro ao buscar categorias", error);
+      });
   }
 
   close() {
