@@ -1,0 +1,21 @@
+<ion-navbar *navbar>
+  <ion-buttons start>
+    <button (click)="close()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-buttons>
+  <ion-title>Produto</ion-title>
+</ion-navbar>
+
+<ion-content padding class="product-modal">
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input [(ngModel)]="product.nome"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button block (click)="save()">Salvar</button>
+
+</ion-content>

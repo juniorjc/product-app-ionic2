@@ -69,4 +69,5 @@ export class CategoryPage {
 
     this.nav.present(modal);
   }
+
 }
